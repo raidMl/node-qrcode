@@ -6,7 +6,14 @@ let data = {
         "khababa@gmdf.com"
 }
 let stJson = JSON.stringify(data)
-qr.toString(stJson, { type: "terminal" }, function (error, code) {
+// qr.toString(stJson, { type: "terminal" }, function (error, code) {
+//     if (error)
+//         return console.log(error)
+//     console.log(code)
+
+// })
+
+qr.toDataURL(stJson, function (error, code) {
     if (error)
         return console.log(error)
     console.log(code)
