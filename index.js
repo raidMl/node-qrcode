@@ -1,11 +1,15 @@
 const qr = require("qrcode")
-let data = {
-    name:
-        "khaba ba",
-    email:
-        "khababa@gmdf.com"
-}
-let stJson = JSON.stringify(data)
+// let data = {
+//    link:"localhost:5000/"
+//     email:
+//         "khababa@gmdf.com"
+// }
+
+// let stJson = JSON.stringify(data)
+
+const id = "64246ca39549b99c5d1bcf1e"
+data = "http://localhost:5000/user/" + id
+
 // qr.toString(stJson, { type: "terminal" }, function (error, code) {
 //     if (error)
 //         return console.log(error)
@@ -24,7 +28,7 @@ let stJson = JSON.stringify(data)
 // ++++++++++++++++++USING FILE IMG++++++++++++
 
 
-qr.toFile("./images/img.png",stJson, function (error) {
+qr.toFile("./images/img1.png", data, function (error) {
     if (error)
         return console.log(error)
 
