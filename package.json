@@ -1,0 +1,22 @@
+{
+  "name": "qrcode",
+  "version": "1.0.0",
+  "description": "qr code img generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raidMl/node-qrcode.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/raidMl/node-qrcode/issues"
+  },
+  "homepage": "https://github.com/raidMl/node-qrcode#readme",
+  "dependencies": {
+    "qrcode": "^1.5.3"
+  }
+}
