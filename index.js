@@ -28,8 +28,49 @@ data = "http://localhost:5000/user/" + id
 // ++++++++++++++++++USING FILE IMG++++++++++++
 
 
-qr.toFile("./images/img1.png", data, function (error) {
-    if (error)
-        return console.log(error)
+//generate random name 
+const crypto = require('crypto');
 
-})
+function generateRandomName(originalName) {
+    const hash = crypto.randomBytes(10).toString('hex');
+    const extension = originalName.split('.').pop();
+    return `${hash}.${extension}`;
+}
+
+const originalName = 'my-image.jpg';
+const randomName = generateRandomName(originalName);
+console.log(randomName); // Example output: '4f5b7c9d2e.jpg'
+
+
+
+
+
+
+//check file exist or not
+
+const fs = require('fs');
+
+function checkIfImageExists(filename) {
+    try {
+        fs.accessSync(filename, fs.constants.F_OK);
+        return true;
+    } catch (err) {
+        return false;
+    }
+}
+
+const filename = `images/${randomName}`;
+if (checkIfImageExists(filename)) {
+    console.log('The image exists!');
+} else {
+    console.log('The image does not exist.');
+    //generate qr image
+    qr.toFile(`./images/${randomName}.png`, data, function (error) {
+        if (error)
+            return console.log(error)
+
+    })
+}
+
+
+
