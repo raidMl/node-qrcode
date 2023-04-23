@@ -13,9 +13,19 @@ let stJson = JSON.stringify(data)
 
 // })
 
-qr.toDataURL(stJson, function (error, code) {
+//________________________USING DATA URL
+// qr.toDataURL(stJson, function (error, code) {
+//     if (error)
+//         return console.log(error)
+//     console.log(code)
+
+// })
+
+// ++++++++++++++++++USING FILE IMG++++++++++++
+
+
+qr.toFile("./images/img.png",stJson, function (error) {
     if (error)
         return console.log(error)
-    console.log(code)
 
 })
